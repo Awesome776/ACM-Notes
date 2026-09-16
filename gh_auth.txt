@@ -1,0 +1,14 @@
+﻿=== gh version ===
+gh version 2.101.0 (2026-09-15)
+https://github.com/cli/cli/releases/tag/v2.101.0
+
+=== auth status ===
+gh : You are not logged into any GitHub hosts. To log in, run: gh auth login
+所在位置 行:445 字符: 286
++ ... put += "=== auth status ==="; $output += (gh auth status 2>&1 | Out-S ...
++                                               ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (You are not log...: gh auth login 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
