@@ -1,0 +1,43 @@
+﻿=== COMMIT ===
+[main e91ee84] Refactor: restructure notes/templates per user feedback
+ 13 files changed, 279 insertions(+), 476 deletions(-)
+ create mode 100644 gh_login_output.txt
+ create mode 100644 notes/dp/knapsack.md
+ create mode 100644 templates/dp/knapsack_01.cpp
+
+=== LOG ===
+e91ee84 Refactor: restructure notes/templates per user feedback
+392c565 Remove temp output file
+cabab3c Clean up temporary files
+c2e1e94 Add .gitattributes for LF line endings; clean up temp files
+4f7cf91 Remove temporary check files
+c835197 Initial commit: ACM competition knowledge repository structure
+
+=== TREE ===
+.gitattributes
+.gitignore
+.vscode/extensions.json
+.vscode/settings.json
+README.md
+docs/study-guide.md
+gh_login_output.txt
+notes/basic/binary-search.md
+notes/basic/sort.md
+notes/data-structure/segment-tree.md
+notes/dp/.gitkeep
+notes/dp/knapsack.md
+notes/geometry/.gitkeep
+notes/graph/shortest-path.md
+notes/math/.gitkeep
+notes/misc/.gitkeep
+notes/string/.gitkeep
+templates/basic/binary_search.cpp
+templates/data-structure/segment_tree.cpp
+templates/dp/.gitkeep
+templates/dp/knapsack_01.cpp
+templates/geometry/.gitkeep
+templates/graph/dijkstra.cpp
+templates/math/fast_power.cpp
+templates/misc/.gitkeep
+templates/string/.gitkeep
+
