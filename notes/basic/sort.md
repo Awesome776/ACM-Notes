@@ -1,78 +1,35 @@
-# 排序算法
+# 排序
 
-## 概述
+## 简介
 
-排序是竞赛中最基础也最常用的算法之一。实际竞赛中**绝大多数情况直接使用 `std::sort`**，但理解各排序算法的原理对解决特定问题（如求逆序对）至关重要。
+将无序序列按升序或降序排列。竞赛中绝大多数场景直接使用 `std::sort`，但归并排序可求逆序对。
 
-## 常见排序算法对比
+## 核心思想
 
-| 算法 | 平均时间 | 最坏时间 | 空间 | 稳定性 |
-|------|---------|---------|------|--------|
-| 冒泡排序 | O(n²) | O(n²) | O(1) | 稳定 |
-| 选择排序 | O(n²) | O(n²) | O(1) | 不稳定 |
-| 插入排序 | O(n²) | O(n²) | O(1) | 稳定 |
-| 快速排序 | O(n log n) | O(n²) | O(log n) | 不稳定 |
-| 归并排序 | O(n log n) | O(n log n) | O(n) | 稳定 |
-| 堆排序 | O(n log n) | O(n log n) | O(1) | 不稳定 |
+- **快排**：选基准值，小于的放左、大于的放右，递归处理两侧
+- **归并排序**：分治递归排序左半和右半，再合并两个有序序列
+- **堆排**：建大根堆，反复取堆顶放末尾
 
-## STL 排序
+## 算法流程（归并排序求逆序对）
 
-竞赛中最常用的排序方式：
+1. 递归排序 `[l, mid]` 和 `[mid+1, r]`
+2. 双指针合并两段有序序列到临时数组
+3. 合并时若左半当前元素 > 右半当前元素，则左半剩余元素均构成逆序对，累加 `mid - i + 1`
+4. 将临时数组拷回原数组
 
-```cpp
-// 数组排序（升序）
-int a[n];
-std::sort(a, a + n);
+## 复杂度
 
-// 数组排序（降序）
-std::sort(a, a + n, std::greater<int>());
+| 算法 | 平均时间 | 最坏时间 | 空间 | 稳定 |
+|------|---------|---------|------|------|
+| `std::sort` | O(n log n) | O(n log n) | O(log n) | 否 |
+| 归并排序 | O(n log n) | O(n log n) | O(n) | 是 |
+| 堆排序 | O(n log n) | O(n log n) | O(1) | 否 |
 
-// vector 排序
-std::vector<int> v;
-std::sort(v.begin(), v.end());
+## 模板
 
-// 自定义比较函数
-struct Node { int x, y; };
-bool cmp(const Node &a, const Node &b) {
-    if (a.x != b.x) return a.x < b.x;  // x 升序
-    return a.y > b.y;                   // x 相同时 y 降序
-}
-std::sort(v.begin(), v.end(), cmp);
-```
-
-## 逆序对（归并排序应用）
-
-求序列中逆序对的数量是归并排序的经典应用：
-
-```cpp
-long long merge_sort(int a[], int l, int r) {
-    if (l >= r) return 0;
-    int mid = (l + r) / 2;
-    long long cnt = merge_sort(a, l, mid) + merge_sort(a, mid + 1, r);
-    int temp[r - l + 1];
-    int i = l, j = mid + 1, k = 0;
-    while (i <= mid && j <= r) {
-        if (a[i] <= a[j]) temp[k++] = a[i++];
-        else { temp[k++] = a[j++]; cnt += mid - i + 1; }
-    }
-    while (i <= mid) temp[k++] = a[i++];
-    while (j <= r) temp[k++] = a[j++];
-    for (i = l, k = 0; i <= r; i++, k++) a[i] = temp[k];
-    return cnt;
-}
-```
+暂无独立模板，STL `std::sort` 直接使用。逆序对代码见下方。
 
 ## 典型例题
 
-- **逆序对**：[洛谷 P1908](https://www.luogu.com.cn/problem/P1908)
-- **不重复排序去重**：使用 `sort` + `unique` + `erase`
-
-## 总结
-
-| 场景 | 推荐方法 |
-|------|---------|
-| 普通排序 | `std::sort` |
-| 需要稳定性 | `std::stable_sort` |
-| 部分排序 | `std::partial_sort` |
-| 求逆序对 | 归并排序 / 树状数组 |
-| 第 k 大 | `std::nth_element` |
+- [洛谷 P1908 逆序对](https://www.luogu.com.cn/problem/P1908)
+- [洛谷 P1093 奖学金](https://www.luogu.com.cn/problem/P1093) — 自定义排序

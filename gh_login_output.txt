@@ -1,0 +1,9 @@
+﻿gh : 
+所在位置 行:445 字符: 147
++ ... PATH", "User"); gh auth login --web --git-protocol https 2>&1 | Out-F ...
++                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+! One-time code (FCBA-0BC3) copied to clipboard
+Open this URL to continue in your web browser: https://github.com/login/device
