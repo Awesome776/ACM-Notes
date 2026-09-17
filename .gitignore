@@ -22,6 +22,12 @@ __pycache__/
 Thumbs.db
 desktop.ini
 
+# 临时文件
+*_result.txt
+*output.txt
+*check.txt
+gh_login_output.txt
+
 # 测试数据（可选保留）
 # *.in
 # *.ans
