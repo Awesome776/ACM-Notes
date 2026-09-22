@@ -22,12 +22,3 @@
 | Dijkstra（堆优化） | O((V+E) log V) | 非负权 |
 | SPFA | ~O(kE)，最坏 O(VE) | 可含负权 |
 | Floyd | O(V³) | 全源最短路 |
-
-## 模板
-
-→ [dijkstra.cpp](../../templates/graph/dijkstra.cpp)（堆优化 Dijkstra）
-
-## 典型例题
-
-- [洛谷 P4779 单源最短路](https://www.luogu.com.cn/problem/P4779) — Dijkstra 模板
-- [洛谷 P3385 负环](https://www.luogu.com.cn/problem/P3385) — SPFA 判负环

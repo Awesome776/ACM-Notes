@@ -25,12 +25,3 @@
 
 - 时间：O(nW)
 - 空间：O(W)（滚动数组优化后）
-
-## 模板
-
-→ [knapsack_01.cpp](../../templates/dp/knapsack_01.cpp)
-
-## 典型例题
-
-- [洛谷 P1048 采药](https://www.luogu.com.cn/problem/P1048) — 01 背包
-- [洛谷 P1616 疯狂的采药](https://www.luogu.com.cn/problem/P1616) — 完全背包

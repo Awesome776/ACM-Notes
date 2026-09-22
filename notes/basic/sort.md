@@ -24,12 +24,3 @@
 | `std::sort` | O(n log n) | O(n log n) | O(log n) | 否 |
 | 归并排序 | O(n log n) | O(n log n) | O(n) | 是 |
 | 堆排序 | O(n log n) | O(n log n) | O(1) | 否 |
-
-## 模板
-
-暂无独立模板，STL `std::sort` 直接使用。逆序对代码见下方。
-
-## 典型例题
-
-- [洛谷 P1908 逆序对](https://www.luogu.com.cn/problem/P1908)
-- [洛谷 P1093 奖学金](https://www.luogu.com.cn/problem/P1093) — 自定义排序

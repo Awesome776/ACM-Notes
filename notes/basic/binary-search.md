@@ -22,12 +22,3 @@
 
 - 时间：O(log n)
 - 空间：O(1)
-
-## 模板
-
-→ [binary_search.cpp](../../templates/basic/binary_search.cpp)
-
-## 典型例题
-
-- [洛谷 P1102 A-B 数对](https://www.luogu.com.cn/problem/P1102) — lower/upper_bound
-- [洛谷 P1873 找到大于等于 x 的最小值](https://www.luogu.com.cn/problem/P1873) — 答案二分
